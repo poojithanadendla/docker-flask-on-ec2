@@ -7,5 +7,5 @@ This project automates the setup and deployment of a Flask application using Doc
 - **Docker** to run the web app container
 
 ## App Details
-The app is a simple Python Flask application that shows:
+The app is a simple Python Flask application that shows
 
