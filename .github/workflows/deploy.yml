@@ -24,10 +24,10 @@ jobs:
 
       - name: Deploy container
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST }} << 'EOC'
+          ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST }} << EOC
             cd app
-            docker stop \$(docker ps -q) 2>/dev/null || true
-            docker rm \$(docker ps -aq) 2>/dev/null || true
+            docker stop $(docker ps -q) 2>/dev/null || true
+            docker rm $(docker ps -aq) 2>/dev/null || true
             docker build -t myapp .
             docker run -d -p 80:80 myapp
           EOC
